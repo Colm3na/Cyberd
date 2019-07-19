@@ -7,11 +7,11 @@
 
 En este repositorio puedes encontrar algunos scripts para gestionar el nodo de [Cyberd](https://github.com/cybercongress/cyberd/blob/master/docs/cyberd.md) .
 
-Si quieres saber algo mas este es su [repositorio](https://github.com/cybercongress/cyberd), [aquí](https://github.com/cybercongress/cyberd/tree/master/docs) puedes encontrar más documentación de Cyberd, [aquí](https://github.com/cybercongress/cyberd/blob/master/docs/run_validator.md) como ser validador en Cyberd, y este es su [hub oficial](https://hub.docker.com/r/cyberd/cyberd) de Docker.
+Si quieres saber algo más [este](https://github.com/cybercongress/cyberd) es su repositorio, [aquí](https://github.com/cybercongress/cyberd/tree/master/docs) puedes encontrar más documentación de Cyberd, [aquí](https://github.com/cybercongress/cyberd/blob/master/docs/run_validator.md) como ser validador en Cyberd, y este es su [hub oficial](https://hub.docker.com/r/cyberd/cyberd) de Docker.
 
 [Este](https://t.me/fuckgoogle) es su grupo de telegram, [esta](https://twitter.com/cyber_devs) es su cuenta de Twitter y [esta](https://cybercongress.ai/) su web y el blog.
 
-Con estos scripts puedes manegar el docker del validador.
+Con estos scripts puedes manejar el docker del validador.
 
 > **Recuerda que necesitas cambiar los valores de los scripts por los tuyos**.
 
