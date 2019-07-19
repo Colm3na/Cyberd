@@ -11,8 +11,13 @@ Si quieres saber algo mas este es su [repositorio](https://github.com/cybercongr
 
 [Este](https://t.me/fuckgoogle) es su grupo de telegram, [esta](https://twitter.com/cyber_devs) es su cuenta de Twitter y [esta](https://cybercongress.ai/) su web y el blog.
 
-Con estos scripts puedes manegar el docker del validador sin tener que entrar en el Docker.
+Con estos scripts puedes manegar el docker del validador.
+
 > **Recuerda que necesitas cambiar los valores de los scripts por los tuyos**.
+
+> **Si necesitas algún script y no esta en este repositorio, puedes hacer un PR o abrir una ISSUE con lo que necesites**.
+
+> _Si tienes algún problema siempre puedes pasar por la [Colmena](https://www.coworkingcolmena.com) para preguntar y aprender lo que necesites_.
 
 
 <sumary>

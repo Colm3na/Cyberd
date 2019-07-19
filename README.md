@@ -12,7 +12,10 @@ If you want to know something more, you can see the [official repo](https://gith
 Also [this](https://t.me/fuckgoogle) is their telegram group, the [official account](https://twitter.com/cyber_devs) on Twitter and the [website & blog](https://cybercongress.ai/).
 
 With this scrips you can manage the docker of Cyberd node from outside of docker.
+
 > **Remember, you need to modify the scripts with your values**.
+
+> **If you need another script and isn't in this repo, you can made a PR or ISSUE with the script you need**.
 
 
 <sumary>
@@ -49,3 +52,4 @@ chmod +x *
 ./balance
 ```
 </details>
+
