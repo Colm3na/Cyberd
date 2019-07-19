@@ -1,0 +1,14 @@
+#!/bin/bash
+#   Made with love in Colm3naSVQ by :          #
+#                                              #
+#  @wimel85(wiπΞl)->@cosmaut:matrix.org        #
+#  @DerFredy -> @derfredy:matrix.org           # 
+#
+# Shows balance
+# docker exec -ti cyberd 
+
+chain_id=$(docker exec -ti cyberd curl -s http://localhost:26657/status | jq -r '.result.node_info.network')
+
+account_cosmos=$(docker exec -ti cyberd cyberdcli keys list | awk 'FNR==2{print $3}')
+
+docker exec -ti cyberd cyberdcli query account $account_cosmos --chain-id=$chain_id --trust-node=true --output=json | jq -s 
