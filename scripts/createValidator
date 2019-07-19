@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Script para crear el validador:
+
+pubkey=$(docker exec cyberd cyberd tendermint show-validator)
+
+docker exec -ti cyberd cyberdcli tx staking create-validator \
+  --amount=<AMOUNT>cyb \
+  --min-self-delegation "1000000" \
+  --pubkey="${pubkey}" \
+  --moniker=<NameOfNode> \
+  --trust-node \
+  --from=<WALLET> \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --chain-id=euler-4 -y

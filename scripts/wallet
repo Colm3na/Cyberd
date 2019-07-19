@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Script para ver el balance de la wallet 
+
+docker exec -it cyberd cyberdcli
+
+echo "¿Qué wallet quieres usar (recuerda usar la dirección, no el nombre)?"
+read -r wallet
+
+docker exec -it cyberd cyberdcli query account "${wallet}" --trust-node=true

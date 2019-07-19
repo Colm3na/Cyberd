@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Script para saber el ultimo bloque:
+
+docker exec -ti cyberd curl -s http://localhost:26657/status | jq '.result.sync_info.latest_block_height'
