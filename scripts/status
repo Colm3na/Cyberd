@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Script para ver el estado del nodo
+
+docker exec cyberd cyberdcli status
