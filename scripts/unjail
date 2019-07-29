@@ -1,0 +1,58 @@
+#!/bin/bash
+################################################
+#                                              #
+#  Made with love in Colm3naSVQ by :           #
+#                                              #
+#  @wimel85(wiπΞl) -> @cosmaut:matrix.org      #
+#  @DerFredy       -> @derfredy:matrix.org     #
+#  @Bitcoinera -> @bitcoinera:matrix.org       #                               
+#                                              #
+################################################
+
+PROJECT=cyberd
+DAEMON=cyberd
+CLI=cyberdcli
+UNIT=cyb
+
+chain_id=`curl -s http://localhost:26657/status | jq -r '.result.node_info.network'`
+key_name=$(docker exec -ti cyberd cyberdcli keys list | awk 'FNR==4{print $1}')
+
+#
+# Simple countdown timer
+#
+function countdown {
+  #	
+  # 2 days countdown in seconds	
+  # 60s*60min*24h*1day
+  # 
+  secs=$((60*60*24*1))
+  while [ $secs -gt 0 ]; do
+    echo -ne "Waiting $secs seconds \033[0K\r"
+    sleep 1
+    : $((secs--))
+  done
+}
+
+#
+# Read Wallet password
+#
+
+echo "Wallet password:"
+read -s password
+
+#
+# Start de loop
+#
+
+while true; do
+    echo ""
+    echo "Freeing Validator:"
+    echo "docker exec -ti cyberd cyberdcli tx slashing unjail --from=$key_name --chain-id=$chain_id -y"
+    echo ""
+    echo "$password" | docker exec -i cyberd cyberdcli tx slashing unjail --from=$key_name --chain-id=$chain_id -y 
+    
+    echo "Done! Let's wait and see if we get jailed again (hopefully not)"
+    
+    countdown
+done
+
