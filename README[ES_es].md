@@ -104,6 +104,12 @@ Desgraciadamente, nos obliga a escribir la contraseña que encripta nuestra wall
 ./crawler upload-duras-to-ipfs enwiki-latest-all-titles
 ```
 
-Para saber qué es un DURA, aquí encontraréis toda la información: https://github.com/cybercongress/cyb/blob/dev/docs/dura.md  
+Para saber qué es un DURA, aquí encontraréis toda la información: https://github.com/cybercongress/cyb/blob/dev/docs/dura.md
+
+- <h3>Bandwidth:</h3>
+
+Crawler consume puntos de bandwidth para crear los links. Estos puntos se regeneran con el tiempo y también dependiendo de nuestra cantidad de CYBs.
+
+Después de generar una serie de links, veremos el mensaje `Low bandwidth. Sleep for 14.081µs seconds`. Entonces sólo cabrá esperar o bien conseguir más CYBs.
 
 </details>
