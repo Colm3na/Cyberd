@@ -54,3 +54,56 @@ chmod +x *
 ./balance
 ```
 </details>
+
+<sumary>
+<h2 align="center"> Crawler: </h1>
+
+</sumary>
+<details>
+
+- <h3>Clona el repositorio:</h3>
+```
+git clone https://github.com/cybercongress/crawler
+```
+
+- Ya deberíamos tener Go 1.12+ instalado al necesitar cyberd ya corriendo para usarlo con el crawler.
+
+- Para instalarlo hacemos:
+```
+cd crawler
+go build -o crawler
+```
+
+- <h3>Requisitos:</h3>
+
+Tal y como se especifica en el repositorio original, necesitamos 3 cosas para usar crawler:
+
+1. El daemon de ipfs corriendo. Lo arrancamos con el comando `ipfs daemon`.
+
+2. Descargarnos enwiki-latest-all-titles al directorio raíz del crawler:
+```
+ipfs get QmddV5QP87BZGiSUCf9x9hsqM73b83rsPC6AYMNqkjKMGx -o enwiki-latest-all-titles
+```
+
+3. Cyberd corriendo con una cuenta de la que tengamos la contraseña.
+
+- <h3>Uso:</h3>
+
+Crawler tiene dos funciones: parsear los títulos de la wiki y enviar links entre las palabras claves y las páginas de la wiki, y la segunda subir archivos o DURAS al nodo de IPFS local.
+
+1. Para la primera función, simplemente abrimos un `tmux` y corremos este comando:
+```
+./crawler submit-links-to-cyber ./enwiki-latest-all-titles --home=<path-to-cyberdcli> --address=<account> --passphrase=<passphrase> --chunk=100
+```
+El parámetro `--home`, si hemos instalado nuestro cyberd siguiendo la guía oficial, será `--home=/cyberd/cli/`.
+
+Desgraciadamente, nos obliga a escribir la contraseña que encripta nuestra wallet de cyberd en `passphrase`.
+
+2. Para la segunda función, igualmente en un `tmux`, ejecutamos:
+```
+./crawler upload-duras-to-ipfs enwiki-latest-all-titles
+```
+
+Para saber qué es un DURA, aquí encontraréis toda la información: https://github.com/cybercongress/cyb/blob/dev/docs/dura.md  
+
+</details>
