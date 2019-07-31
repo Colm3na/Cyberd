@@ -116,13 +116,13 @@ ipfs get QmddV5QP87BZGiSUCf9x9hsqM73b83rsPC6AYMNqkjKMGx -o enwiki-latest-all-tit
 
 Crawler tiene dos funciones: parsear los títulos de la wiki y enviar links entre las palabras claves y las páginas de la wiki, y la segunda subir archivos o DURAS al nodo de IPFS local.
 
-1. Para la primera función, simplemente abrimos un `tmux` y corremos este comando:
+1. Para la primera función, simplemente abrimos un `tmux` y corremos este comando como sudo:
 ```
-./crawler submit-links-to-cyber ./enwiki-latest-all-titles --home=<path-to-cyberdcli> --address=<account> --passphrase=<passphrase> --chunk=100
+sudo ./crawler submit-links-to-cyber ./enwiki-latest-all-titles --home=<path-to-cyberdcli> --address=<account> --passphrase=<passphrase> --chunk=100
 ```
 El parámetro `--home`, si hemos instalado nuestro cyberd siguiendo la guía oficial, será `--home=/cyberd/cli/`.
 
-Desgraciadamente, nos obliga a escribir la contraseña que encripta nuestra wallet de cyberd en `passphrase`.
+Desgraciadamente, nos obliga a escribir la contraseña en texto plano que encripta nuestra wallet de cyberd en `passphrase`.
 
 2. Para la segunda función, igualmente en un `tmux`, ejecutamos:
 ```
