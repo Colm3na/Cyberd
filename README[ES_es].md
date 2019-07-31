@@ -66,7 +66,32 @@ chmod +x *
 git clone https://github.com/cybercongress/crawler
 ```
 
-- Ya deberíamos tener Go 1.12+ instalado al necesitar cyberd ya corriendo para usarlo con el crawler.
+- Ya deberíamos tener Go 1.12+ instalado, necesitamos cyberd ya corriendo para usarlo con crawler.
+
+---
+
+<sumary>
+  <h3 align="center">Instalación de Go y el nodo de IPFS</h3>
+
+</sumary>
+<details>
+  
+>Si necesitas instalar Go, puedes ir a [esta guía.](https://github.com/Colm3na/Cosmos/blob/master/testnets/Instalación%20de%20un%20nodo%20de%20Cosmos%20en%20Gaia-13004%5BES_es%5D.md#instalamos-la-última-versión-de-go)
+
+>Para instalar un nodo de IPFS:
+
+`sudo snap install ipfs`
+
+>Iniciamos IPFS:
+
+`ipfs init`
+
+>Dejamos el demonio corriendo:
+
+`ipfs daemon` 
+</details>
+
+---
 
 - Para instalarlo hacemos:
 ```
