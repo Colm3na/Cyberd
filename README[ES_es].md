@@ -21,7 +21,7 @@ Con estos scripts puedes manejar el docker del validador.
 
 
 <sumary>
-<h1 align="center"> Cómo usarlo: </h1>
+<h1 align="center"> Cómo usar el repositorio: </h1>
 
 </sumary>
 <details>
