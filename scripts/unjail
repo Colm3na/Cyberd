@@ -9,11 +9,6 @@
 #                                              #
 ################################################
 
-PROJECT=cyberd
-DAEMON=cyberd
-CLI=cyberdcli
-UNIT=cyb
-
 chain_id=`curl -s http://localhost:26657/status | jq -r '.result.node_info.network'`
 key_name=$(docker exec -ti cyberd cyberdcli keys list | awk 'FNR==4{print $1}')
 
@@ -24,8 +19,8 @@ function countdown {
   #	
   # 2 days countdown in seconds	
   # 60s*60min*24h*1day
-  # 
-  secs=$((60*60*24*1))
+  # Here every one minute
+  secs=$((60*1))
   while [ $secs -gt 0 ]; do
     echo -ne "Waiting $secs seconds \033[0K\r"
     sleep 1
@@ -44,15 +39,22 @@ read -s password
 # Start de loop
 #
 
-while true; do
+while true
+ do
+  jailed=`~/scripts/jailed.sh`
+
+  if [[ "${jailed}" == "true" ]]; then
+    echo "Is Jailed? $jailed"
+
     echo ""
     echo "Freeing Validator:"
-    echo "docker exec -ti cyberd cyberdcli tx slashing unjail --from=$key_name --chain-id=$chain_id -y"
     echo ""
     echo "$password" | docker exec -i cyberd cyberdcli tx slashing unjail --from=$key_name --chain-id=$chain_id -y 
-    
-    echo "Done! Let's wait and see if we get jailed again (hopefully not)"
-    
-    countdown
-done
+    echo "Done! Let's wait and see if we get in jail again (hopefully not)"
 
+    countdown
+  else
+    echo "Cool! Let's wait and hope we don't get in jail anymore"
+    countdown
+  fi
+done
