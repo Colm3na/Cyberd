@@ -41,7 +41,7 @@ read -s password
 
 while true
  do
-  jailed=`~/scripts/jailed.sh`
+  jailed=`~/scripts/jailed`
 
   if [[ "${jailed}" == "true" ]]; then
     echo "Is Jailed? $jailed"
